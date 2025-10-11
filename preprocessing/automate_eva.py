@@ -50,5 +50,5 @@ df_preprocessed.to_csv(OUTPUT_PATH, index=False)
 print(f"Hasil preprocessing berhasil disimpan ke: {OUTPUT_PATH}")
 
 # Menampilkan 5 baris pertama (contoh)
-print("\nContoh hasil preprocessing:")
+print("Contoh hasil preprocessing:")
 print(df_preprocessed.head())
