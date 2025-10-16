@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Eva/Documents/Eksperimen_SML_EvaMeivinaDwiana/Membangun_model/mlruns/0/models/m-dfe4804b937944eeb79f2d1928ed5dd2/artifacts
+creation_timestamp: 1760276656104
+experiment_id: '0'
+last_updated_timestamp: 1760276669921
+model_id: m-dfe4804b937944eeb79f2d1928ed5dd2
+model_type: null
+name: model
+source_run_id: 6729bacbd4f84a808d0d4af4001ed452
+status: 2
+status_message: null

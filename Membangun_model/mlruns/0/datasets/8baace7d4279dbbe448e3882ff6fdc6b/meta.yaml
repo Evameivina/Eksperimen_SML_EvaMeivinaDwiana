@@ -1,0 +1,21 @@
+digest: a0872b12
+name: dataset
+profile: '{"num_rows": 800, "num_elements": 12800}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "math score", "required":
+  true}, {"type": "double", "name": "reading score", "required": true}, {"type": "double",
+  "name": "writing score", "required": true}, {"type": "double", "name": "gender_male",
+  "required": true}, {"type": "double", "name": "race/ethnicity_group B", "required":
+  true}, {"type": "double", "name": "race/ethnicity_group C", "required": true}, {"type":
+  "double", "name": "race/ethnicity_group D", "required": true}, {"type": "double",
+  "name": "race/ethnicity_group E", "required": true}, {"type": "double", "name":
+  "parental level of education_bachelor''s degree", "required": true}, {"type": "double",
+  "name": "parental level of education_high school", "required": true}, {"type": "double",
+  "name": "parental level of education_master''s degree", "required": true}, {"type":
+  "double", "name": "parental level of education_some college", "required": true},
+  {"type": "double", "name": "parental level of education_some high school", "required":
+  true}, {"type": "double", "name": "lunch_standard", "required": true}, {"type":
+  "double", "name": "test preparation course_none", "required": true}, {"type": "double",
+  "name": "average_score", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Eva", "mlflow.source.name": "modelling.py", "mlflow.source.type":
+  "LOCAL", "mlflow.source.git.commit": "9df39c5de1038c202d7b4131c2fef17f8a7079e8"}}'
+source_type: code
