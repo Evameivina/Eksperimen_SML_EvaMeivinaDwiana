@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 # Path dataset hasil preprocessing
-dataset_path = "namadataset_preprocessing/StudentsPerformance_preprocessed.csv"
+dataset_path = "preprocessing/namadataset_preprocessing/StudentsPerformance_preprocessed.csv"
 
 # Membaca dataset
 data = pd.read_csv(dataset_path)

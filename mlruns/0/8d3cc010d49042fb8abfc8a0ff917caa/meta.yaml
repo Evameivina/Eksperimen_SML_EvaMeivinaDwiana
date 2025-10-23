@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/8d3cc010d49042fb8abfc8a0ff917caa/artifacts
+end_time: 1760631511992
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8d3cc010d49042fb8abfc8a0ff917caa
+run_name: colorful-ray-108
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760631484118
+status: 3
+tags: []
+user_id: Eva

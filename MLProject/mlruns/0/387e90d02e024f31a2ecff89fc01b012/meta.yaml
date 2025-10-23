@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Eva/Documents/Eksperimen_SML_EvaMeivinaDwiana/MLProject/mlruns/0/387e90d02e024f31a2ecff89fc01b012/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 387e90d02e024f31a2ecff89fc01b012
+run_name: sedate-ox-276
+run_uuid: 387e90d02e024f31a2ecff89fc01b012
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761221182162
+status: 1
+tags: []
+user_id: Eva

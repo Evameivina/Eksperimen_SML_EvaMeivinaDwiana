@@ -1,0 +1,10 @@
+name: my_ml_env
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - tensorflow
+  - scikit-learn
+  - pip
+  - pip:
+      - mlflow
