@@ -1,0 +1,55 @@
+name: MLflow CI
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  train_model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install Conda
+        uses: goanpeca/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: 3.10
+
+      - name: Create Conda environment
+        run: conda env create -f MLProject/conda.yaml
+
+      - name: Activate environment and run MLflow
+        shell: bash -l {0}
+        run: |
+          conda activate my_ml_env
+          mlflow run MLProject --env-manager local -P n_estimators=100 -P max_depth=3
+
+      - name: Upload MLflow artefacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: mlflow-artifacts
+          path: MLProject/mlruns/
+
+      - name: Build Docker image
+        shell: bash -l {0}
+        run: |
+          conda activate my_ml_env
+          mlflow build-docker MLProject
+
+      - name: Push Docker image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        shell: bash -l {0}
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker tag mlflow-project:latest evameivina/mlflow-project:latest
+          docker push evameivina/mlflow-project:latest
