@@ -13,6 +13,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Mark repo as safe
+        run: |
+          git config --global --add safe.directory '*'
+
       - name: Install Miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
@@ -27,19 +31,9 @@ jobs:
           conda list
 
       - name: Configure Git
-        shell: bash -l {0}
         run: |
           git config --global user.email "evameivina@example.com"
           git config --global user.name "Eva Meivina"
-          git config --global --add safe.directory '*'
-
-      - name: Ensure Git repository is initialized
-        shell: bash -l {0}
-        run: |
-          cd MLProject
-          git init
-          git remote add origin https://github.com/${{ github.repository }}.git || true
-          git fetch origin main || true
 
       - name: Run MLflow project
         shell: bash -l {0}
