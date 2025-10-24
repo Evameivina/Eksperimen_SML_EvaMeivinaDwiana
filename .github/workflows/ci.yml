@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --global user.email "evameivina@example.com"
           git config --global user.name "Eva Meivina"
-          git config --global --add safe.directory /__w/Eksperimen_SML_EvaMeivinaDwiana/Eksperimen_SML_EvaMeivinaDwiana
+          git config --global --add safe.directory "$(pwd)"
 
       - name: Run MLflow project
         shell: bash -l {0}
