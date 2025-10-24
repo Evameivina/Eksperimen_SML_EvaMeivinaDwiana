@@ -18,7 +18,6 @@ jobs:
         with:
           activate-environment: my_ml_env
           environment-file: MLProject/conda.yaml
-          python-version: 3.10
           auto-activate-base: false
 
       - name: Verify Conda environment
