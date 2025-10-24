@@ -31,7 +31,15 @@ jobs:
         run: |
           git config --global user.email "evameivina@example.com"
           git config --global user.name "Eva Meivina"
-          git config --global --add safe.directory "$(pwd)"
+          git config --global --add safe.directory '*'
+
+      - name: Ensure Git repository is initialized
+        shell: bash -l {0}
+        run: |
+          cd MLProject
+          git init
+          git remote add origin https://github.com/${{ github.repository }}.git || true
+          git fetch origin main || true
 
       - name: Run MLflow project
         shell: bash -l {0}
