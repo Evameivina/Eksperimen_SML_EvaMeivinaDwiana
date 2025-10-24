@@ -26,19 +26,18 @@ jobs:
           conda info
           conda list
 
-      - name: Configure Git safely
+      - name: Configure Git (safe directory)
+        shell: bash -l {0}
         run: |
           git config --global user.email "evameivina@example.com"
           git config --global user.name "Eva Meivina"
-          # FIX: tambahkan repo path aktif sebagai safe directory
-          git config --global --add safe.directory $GITHUB_WORKSPACE
+          git config --global --add safe.directory '*'
 
       - name: Run MLflow project
         shell: bash -l {0}
         run: |
           cd MLProject
-          git config --global --add safe.directory $(pwd)
-          mlflow run . --env-manager local -P n_estimators=100 -P max_depth=3
+          mlflow run . --env-manager local -P epochs=100 -P batch_size=64
 
       - name: Upload MLflow artifacts
         uses: actions/upload-artifact@v4
