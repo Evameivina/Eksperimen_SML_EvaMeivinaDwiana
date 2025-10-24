@@ -27,6 +27,11 @@ jobs:
           conda info
           conda list
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "evameivina@example.com"
+          git config --global user.name "Eva Meivina"
+
       - name: Run MLflow project
         shell: bash -l {0}
         run: |
@@ -37,14 +42,3 @@ jobs:
         with:
           name: mlflow-artifacts
           path: MLProject/mlruns/
-
-      - name: Build and Push Docker image
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        shell: bash -l {0}
-        run: |
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          mlflow build-docker MLProject
-          docker tag mlflow-project:latest evameivina/mlflow-project:latest
-          docker push evameivina/mlflow-project:latest
